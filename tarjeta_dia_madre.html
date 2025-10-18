@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Madre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        .container {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 400px;
+            height: 550px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .card-top {
+            height: 60%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(45deg);
+            animation: subir 8s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            left: -10px;
+        }
+
+        .heart:after {
+            top: -10px;
+        }
+
+        @keyframes subir {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 55%; animation-delay: 1.5s; }
+        .heart:nth-child(5) { left: 70%; animation-delay: 0.5s; }
+        .heart:nth-child(6) { left: 85%; animation-delay: 2.5s; }
+
+        .flower {
+            font-size: 120px;
+            animation: girar 4s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+        }
+
+        @keyframes girar {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-5deg) scale(1.05); }
+            75% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        .titulo {
+            font-size: 42px;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: pulso 2s ease-in-out infinite;
+        }
+
+        @keyframes pulso {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .card-bottom {
+            height: 40%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+
+        .mensaje {
+            font-size: 20px;
+            color: #4a4a4a;
+            text-align: center;
+            line-height: 1.6;
+            font-style: italic;
+            animation: aparecer 2s ease-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .firma {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #f5576c;
+            font-weight: bold;
+            animation: aparecer 2.5s ease-out;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: brillar 2s infinite;
+        }
+
+        @keyframes brillar {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        .sparkle:nth-child(7) { top: 15%; left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(8) { top: 25%; left: 80%; animation-delay: 0.5s; }
+        .sparkle:nth-child(9) { top: 45%; left: 15%; animation-delay: 1s; }
+        .sparkle:nth-child(10) { top: 35%; left: 85%; animation-delay: 1.5s; }
+        .sparkle:nth-child(11) { top: 50%; left: 50%; animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-top">
+                    <div class="hearts">
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="heart"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                    <div class="flower">🌸</div>
+                    <div class="titulo">¡Feliz Día Mamá!</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="mensaje">
+                        "Tu amor es el refugio donde siempre encuentro paz, tu abrazo la fuerza que me impulsa a seguir. Gracias por ser mi luz, mi guía y mi inspiración."
+                    </div>
+                    <div class="firma">Con todo mi amor ❤️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
